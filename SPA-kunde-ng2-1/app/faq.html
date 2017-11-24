@@ -1,6 +1,6 @@
 ﻿<div #top class="container" style="background-color: #f9f9f9;">
     <h2>Spørsmål</h2>
-    <h4>Denne siden er til for å informere våre kunder om de mest vanlige spørsmålene. Bruk knappene under eller scroll nedover siden</h4>
+    <h4>Denne siden er til for å informere våre kunder som ønsker mer informasjon. Bruk knappene under eller scroll nedover siden for å finne svar på dine spørsmål.</h4>
     <div class="row button-wrapper">
         <div class="col-md-4">
             <button type="button" style="height:75px;width:99%" class="btn faq-button" (click)="scroll(faq)"><h3>Ofte stilte spørsmål</h3></button>
@@ -21,26 +21,26 @@
     <div class="row">
         <div class="col-md-12">
             <h2>Søk i databasen</h2>
-                        <div class="row">
-                            <div class="col-md-7">
-                                <h4>Skriv inn dine nøkkelord og søk blant alle registrerte svar i databasen</h4>
-                            </div>
-                            <div class="col-md-5">
-                                <input type="text" [(ngModel)]="searchText" class="form-control" (click)="loading=true" placeholder="Søk etter svar" />
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <h4>Skriv inn dine nøkkelord og søk blant alle registrerte svar i databasen</h4>
+                    </div>
+                    <div class="col-md-5">
+                         <input type="text" [(ngModel)]="searchText" class="form-control" (click)="loading=true" placeholder="Søk etter svar" />
+                    </div>
+                </div>
             <div *ngIf="loading">
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-10">
                                 <h4>Resultat</h4>
-                                </div>
+                            </div>
                             <div class="col-md-2">
                                 <button type="button" class="btn" (click)="loading=false">Lukk søk</button>
-                                </div>
                             </div>
                         </div>
+                    </div>
                         <table class="table">
                             <tr>
                                 <th>
@@ -55,16 +55,15 @@
                                 <td><p>{{quest.Answer}}</p></td>
                             </tr>
                         </table>`                    
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 <div #contact>
     <register-question></register-question>
+    <button type="button" class="btn faq-button pull-right" (click)="scroll(top)"><i class="fa fa-chevron-up"></i></button>
 </div>
-
-<button type="button" class="btn faq-button pull-right" (click)="scroll(top)"><i class="fa fa-chevron-up"></i></button>
 
 
 

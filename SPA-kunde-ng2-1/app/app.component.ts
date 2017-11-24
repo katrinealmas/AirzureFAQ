@@ -5,7 +5,7 @@
     template: `
     <div class="container">
         <div class="row">
-            <nav class="nav navbar-inverse">
+            <nav class="nav navbar-inverse  faq-nav">
                 <div class="container-fluid">
                     <div class="navbar-header">
                     <button type="button" class="navbar navbar-inverse faq-nav navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,7 +27,9 @@
             </nav>
         </div>
     </div>
+<div class="top-30 bottom-5">
     <router-outlet></router-outlet>
+</div>
 `
 })
 

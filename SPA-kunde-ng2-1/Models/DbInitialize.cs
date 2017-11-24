@@ -149,7 +149,7 @@ namespace SPA_kunde_ng2.Models
 
             questions.Add((new UserQuestion
             {
-                Name = "Medisiner",
+                Name = "Medisiner ombord",
                 Email = "Bobbert@gmail.com",
                 Date = DateTime.Now,
                 Question = "Kan jeg oppbevare medisinene mine i kjøleskap ombord?",
@@ -158,11 +158,47 @@ namespace SPA_kunde_ng2.Models
 
             questions.Add((new UserQuestion
             {
-                Name = "Selge bilett",
+                Name = "Videresalg av bilett",
                 Email = "Bob@gmail.com",
                 Date = DateTime.Now,
                 Question = "Kan jeg videre selge biletten min?",
                 Answer = "Ja, men husk å få oppdatert navnet på biletten"
+            }));
+
+            questions.Add((new UserQuestion
+            {
+                Name = "Kjøp av ekstra bagasje",
+                Email = "Oleg@gmail.com",
+                Date = DateTime.Now,
+                Question = "Hvor mye ekstra bagasje kan jeg kjøpe?",
+                Answer =  "Ubesvart"
+            }));
+
+            questions.Add((new UserQuestion
+            {
+                Name = "Veganske alternativer ombord",
+                Email = "Bibiana@gmail.com",
+                Date = DateTime.Now,
+                Question = "Er det mulig å få kjøpt veganske alternativer ombord?",
+                Answer = "Ubesvart"
+            }));
+
+            questions.Add((new UserQuestion
+            {
+                Name = "Medbrakt mat",
+                Email = "hannes@gmail.com",
+                Date = DateTime.Now,
+                Question = "Kan jeg ta med egen mat ombord ?",
+                Answer = "Det kan du til alle våre destinasjoner, men du må være obs dersom du skal fly videre med andre selskap."
+            }));
+
+            questions.Add((new UserQuestion
+            {
+                Name = "Seter",
+                Email = "Fabian@gmail.com",
+                Date = DateTime.Now,
+                Question = "Kan vi bestille seter ved siden av hverandre?",
+                Answer = "Ubesvart"
             }));
 
             foreach (UserQuestion q in questions)

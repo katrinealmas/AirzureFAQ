@@ -3,6 +3,7 @@
 }
 .faq-button {
     background-color: #d9edf7;
+    z-index: 1;
 }
 
  .faq-button:hover {
@@ -29,6 +30,15 @@
     margin-top: 50px;
 }
 
+.top-30 {
+    margin-top: 30px;
+}
+
+.bottom-5 {
+    margin-bottom: 5px;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Pontano Sans', sans-serif;
 }
@@ -39,7 +49,7 @@ p, div {
 
 .footer {
     position: relative;
-    height: 30px;
+    height: 20px;
     bottom: 0;
     width: 100%;
     text-align: center;
