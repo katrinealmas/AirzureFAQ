@@ -1,0 +1,70 @@
+﻿<div class="container" style="background-color: #f9f9f9;">
+    <h2>Spørsmål</h2>
+    <h4>Denne siden er til for å informere våre kunder om de mest vanlige spørsmålene. Bruk knappene under eller scroll nedover siden</h4>
+    <div class="row button-wrapper">
+        <div class="col-md-4">
+            <button type="button" style="height:75px;width:99%" class="btn faq-button" (click)="scroll(faq)"><h3>Ofte stilte spørsmål</h3></button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" style="height:75px;width:99%" class="btn faq-button" (click)="scroll(database)"><h3>Søk i databasen</h3></button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" style="height:75px;width:99%" class="btn faq-button" (click)="scroll(contact)"><h3>Kontakt kundeservice</h3></button>
+        </div>
+    </div>
+</div>
+
+<div #faq>
+    <show-faq></show-faq>
+</div>
+<div #database class="container control-group"style="background-color: #f8f8f8;">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Søk i databasen</h2>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h4>Skriv inn dine nøkkelord og søk blant alle registrerte spørsmål</h4>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" [(ngModel)]="searchText" class="form-control" (click)="loading=true" placeholder="Søk etter spørsmål" />
+                            </div>
+                        </div>
+            <div *ngIf="loading">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <h4>Resultat</h4>
+                                </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn" (click)="loading=false">Lukk søk</button>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    Spørsmål
+                                </th>
+                                <th>
+                                    Svar
+                                </th>
+                            </tr>
+                            <tr *ngFor="let quest of allFaq | question: searchText">
+                                <td><p>{{quest.Question}}</p></td>
+                                <td><p>{{quest.Answer}}</p></td>
+                            </tr>
+                        </table>`                    
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div #contact>
+    <register-question></register-question>
+</div>
+
+
+
+
+

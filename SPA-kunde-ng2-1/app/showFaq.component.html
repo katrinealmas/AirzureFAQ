@@ -1,0 +1,22 @@
+﻿<div #faq class="container control-group" style="background-color: #f9f9f9;">
+    <h2>Ofte stilte spørsmål</h2>
+    <h4>Velg en kategori under for å se de tilhørende spørsmålene</h4>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group" id="parent">
+                <div class="panel panel-info" *ngFor="let category of categories">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" data-parent="#parent" href="#collapse{{category}}" (click)="getCategoryContent(category)">
+                            <p class="panel-title">{{category}}</p>
+                        </a>
+                    </div>
+                    <div id="collapse{{category}}" class="panel-collapse collapse out">
+                        <div *ngFor="let question of categoryContent" class="panel-body">
+                            <br><b>{{question.Question}}</b><br>{{question.Answer}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

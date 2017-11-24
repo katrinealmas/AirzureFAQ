@@ -1,0 +1,38 @@
+﻿.container{
+    padding-bottom: 25px;
+}
+.faq-button {
+    background-color: #d9edf7;
+}
+
+    .faq-button:hover {
+        background-color: #cce0ea;
+    }
+
+.faq-nav {
+    background-color: #444444;
+    border:none;
+}
+
+.navbar-nav > li > a {
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: large;
+    height: 60px;
+}
+
+.button-wrapper .btn {
+    margin-bottom: 5px;
+}
+
+.control-group {
+    margin-top: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Pontano Sans', sans-serif;
+}
+
+p, div {
+    font-family: 'Pontano Sans', sans-serif;
+}
