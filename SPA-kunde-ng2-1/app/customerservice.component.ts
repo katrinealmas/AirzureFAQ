@@ -17,22 +17,20 @@ export class CustomerService {
     skjema: FormGroup;
     allQuestions: Array<Customer>;
     laster = false;
-    records: Array<Customer>;
-    isDesc: boolean = false;
+    descend: boolean = false;
     column: string = 'Name';
     direction: number;
 
     constructor(private _http: Http) { }
 
     ngOnInit() {
-        this.records = [];
         this.getAllCustomerCuestions()
     }
 
     sort(property: any) {
-        this.isDesc = !this.isDesc; //change the direction    
+        this.descend = !this.descend; //change the direction    
         this.column = property;
-        this.direction = this.isDesc ? 1 : -1;
+        this.direction = this.descend ? 1 : -1;
     };
 
     getAllCustomerCuestions() {

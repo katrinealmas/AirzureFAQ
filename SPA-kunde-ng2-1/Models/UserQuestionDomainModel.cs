@@ -6,12 +6,13 @@ using System.Web;
 
 namespace SPA_kunde_ng2.Models
 {
-    public class QuestionViewModel
+    public class UserQuestionDomainModel
     {
         public int Id { get; set; }
         [Required]
         [RegularExpression("[a-zA-ZøæåØÆÅ\\-. ]{2,30}$")]
         public string Name { get; set; }
+     
         public string Date { get; set; }
         [Required]
         [RegularExpression(".+\\@.+\\..+")]

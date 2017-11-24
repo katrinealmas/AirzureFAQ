@@ -17,7 +17,7 @@ namespace SPA_kunde_ng2.Controllers
         // GET api/search
         public HttpResponseMessage Get()
         {
-            List<FaqViewModel> faq = db.getAllAnswers();
+            List<FaqDomainModel> faq = db.getAllAnswers();
 
             var Json = new JavaScriptSerializer();
             string JsonString = Json.Serialize(faq);

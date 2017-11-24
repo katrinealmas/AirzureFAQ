@@ -20,27 +20,27 @@
                 <tr>
                     <th class="pointer" (click)="sort('Id')">
                         Id
-                        <i class="fa" [ngClass]="{'fa-sort': column != 'Id', 'fa-sort-asc': (column == 'Id' && isDesc), 'fa-sort-desc': (column == 'Id' && !isDesc) }" aria-hidden="true"> </i>
+                        <i class="fa" [ngClass]="{'fa-sort': column != 'Id', 'fa-sort-asc': (column == 'Id' && descend), 'fa-sort-desc': (column == 'Id' && !descend) }" aria-hidden="true"> </i>
                     </th>
                     <th class="pointer" (click)="sort('Date')">
                         Date
-                        <i class="fa" [ngClass]="{'fa-sort': column != 'Date', 'fa-sort-asc': (column == 'Date' && isDesc), 'fa-sort-desc': (column == 'Date' && !isDesc) }" aria-hidden="true"> </i>
+                        <i class="fa" [ngClass]="{'fa-sort': column != 'Date', 'fa-sort-asc': (column == 'Date' && descend), 'fa-sort-desc': (column == 'Date' && !descend) }" aria-hidden="true"> </i>
                     </th>
                     <th class="pointer" (click)="sort('Name')">
                         Tittel
-                        <i class="fa" [ngClass]="{'fa-sort': column != 'Name', 'fa-sort-asc': (column == 'Name' && isDesc), 'fa-sort-desc': (column == 'Name' && !isDesc) }" aria-hidden="true"> </i>
+                        <i class="fa" [ngClass]="{'fa-sort': column != 'Name', 'fa-sort-asc': (column == 'Name' && descend), 'fa-sort-desc': (column == 'Name' && !descend) }" aria-hidden="true"> </i>
                     </th>
                     <th class="pointer" (click)="sort('Email')">
                         Email
-                        <i class="fa" [ngClass]="{'fa-sort': column != 'Email', 'fa-sort-asc': (column == 'Email' && isDesc), 'fa-sort-desc': (column == 'Email' && !isDesc) }" aria-hidden="true"> </i>
+                        <i class="fa" [ngClass]="{'fa-sort': column != 'Email', 'fa-sort-asc': (column == 'Email' && descend), 'fa-sort-desc': (column == 'Email' && !descend) }" aria-hidden="true"> </i>
                     </th>
                     <th class="pointer" (click)="sort('Question')">
                         Question
-                        <i class="fa" [ngClass]="{'fa-sort': column != 'Question', 'fa-sort-asc': (column == 'Question' && isDesc), 'fa-sort-desc': (column == 'Question' && !isDesc) }" aria-hidden="true"> </i>
+                        <i class="fa" [ngClass]="{'fa-sort': column != 'Question', 'fa-sort-asc': (column == 'Question' && descend), 'fa-sort-desc': (column == 'Question' && !descend) }" aria-hidden="true"> </i>
                     </th>
                     <th class="pointer" (click)="sort('Answer')">
                         Answer
-                        <i class="fa" [ngClass]="{'fa-sort': column != 'Answer', 'fa-sort-asc': (column == 'Answer' && isDesc), 'fa-sort-desc': (column == 'Answer' && !isDesc) }" aria-hidden="true"> </i>
+                        <i class="fa" [ngClass]="{'fa-sort': column != 'Answer', 'fa-sort-asc': (column == 'Answer' && descend), 'fa-sort-desc': (column == 'Answer' && !descend) }" aria-hidden="true"> </i>
                     </th>
                 </tr>
                 <tr *ngFor="let quest of allQuestions | question: searchText  |  orderBy: {property: column, direction: direction}">

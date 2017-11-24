@@ -16,17 +16,16 @@ var CustomerService = (function () {
     function CustomerService(_http) {
         this._http = _http;
         this.laster = false;
-        this.isDesc = false;
+        this.descend = false;
         this.column = 'Name';
     }
     CustomerService.prototype.ngOnInit = function () {
-        this.records = [];
         this.getAllCustomerCuestions();
     };
     CustomerService.prototype.sort = function (property) {
-        this.isDesc = !this.isDesc; //change the direction    
+        this.descend = !this.descend; //change the direction    
         this.column = property;
-        this.direction = this.isDesc ? 1 : -1;
+        this.direction = this.descend ? 1 : -1;
     };
     ;
     CustomerService.prototype.getAllCustomerCuestions = function () {

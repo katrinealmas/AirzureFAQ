@@ -93,7 +93,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\css\custom.css" />
     <Content Include="app\customerservice.component.html" />
     <Content Include="app\register.component.html" />
     <Content Include="app\showFaq.component.html" />
@@ -104,6 +103,7 @@
     </Content>
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="Style\custom.css" />
     <Content Include="systemjs.config.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -117,12 +117,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DbInitialize.cs" />
-    <Compile Include="Models\DbModel.cs" />
-    <Compile Include="Models\DomeneModel.cs" />
     <Compile Include="Models\Faq.cs" />
     <Compile Include="Models\FaqContext.cs" />
-    <Compile Include="Models\FaqViewModel.cs" />
-    <Compile Include="Models\QuestionViewModel.cs" />
+    <Compile Include="Models\FaqDomainModel.cs" />
+    <Compile Include="Models\UserQuestionDomainModel.cs" />
     <Compile Include="Models\UserQuestion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

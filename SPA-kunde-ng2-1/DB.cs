@@ -11,15 +11,15 @@ namespace SPA_kunde_ng2
         public class DB
         {
         private readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        public List<FaqViewModel> getAllAnswers()
+        public List<FaqDomainModel> getAllAnswers()
             {
                     using (var db = new FaqContext())
                     {
                         List<Faq> faq = (from a in db.Faq
                                                 select a).ToList();
 
-                        List<FaqViewModel> allAnswers = new List<FaqViewModel>();
-                        faq.ForEach(c => allAnswers.Add(new FaqViewModel
+                        List<FaqDomainModel> allAnswers = new List<FaqDomainModel>();
+                        faq.ForEach(c => allAnswers.Add(new FaqDomainModel
                         {
                             Question = c.Question,
                             Answer = c.Answer
@@ -31,7 +31,7 @@ namespace SPA_kunde_ng2
                 
             
 
-            public List<QuestionViewModel> getAllUserQuestions()
+            public List<UserQuestionDomainModel> getAllUserQuestions()
             {
                 
                     using (var db = new FaqContext())
@@ -39,9 +39,9 @@ namespace SPA_kunde_ng2
                         List<UserQuestion> queryResult = (from a in db.Question
                                                            select a).ToList();
 
-                    List<QuestionViewModel> allAnswers = new List<QuestionViewModel>();
+                    List<UserQuestionDomainModel> allAnswers = new List<UserQuestionDomainModel>();
 
-                queryResult.ForEach(c => allAnswers.Add(new QuestionViewModel
+                queryResult.ForEach(c => allAnswers.Add(new UserQuestionDomainModel
                 {
                         Id = c.Id,
                         Name = c.Name,
@@ -56,15 +56,15 @@ namespace SPA_kunde_ng2
                 }
               
 
-            public List<FaqViewModel> getCategoryContent(Category category)
+            public List<FaqDomainModel> getCategoryContent(Category category)
             {
               
                     using (var db = new FaqContext())
                     {
                         
                         List<Faq> faq = db.Faq.Where(o => o.Category == category).ToList();
-                        List<FaqViewModel> categoryContent = new List<FaqViewModel>();
-                        faq.ForEach(c => categoryContent.Add(new FaqViewModel
+                        List<FaqDomainModel> categoryContent = new List<FaqDomainModel>();
+                        faq.ForEach(c => categoryContent.Add(new FaqDomainModel
                     {
                         Category = category.ToString(),
                         Question = c.Question,
@@ -77,7 +77,7 @@ namespace SPA_kunde_ng2
 
             
 
-            public bool AddUserQuestion(QuestionViewModel question)
+            public bool AddUserQuestion(UserQuestionDomainModel question)
             {
             
                 using (var db = new FaqContext())

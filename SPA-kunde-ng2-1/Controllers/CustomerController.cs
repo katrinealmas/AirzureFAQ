@@ -20,7 +20,7 @@ namespace SPA_kunde_ng2.Controllers
         // GET api/UserController
         public HttpResponseMessage Get()
         {
-            List<QuestionViewModel> faq = db.getAllUserQuestions();
+            List<UserQuestionDomainModel> faq = db.getAllUserQuestions();
 
             var Json = new JavaScriptSerializer();
             string JsonString = Json.Serialize(faq);
@@ -34,7 +34,7 @@ namespace SPA_kunde_ng2.Controllers
 
         // POST api/UserController
         [HttpPost]
-        public HttpResponseMessage Post(QuestionViewModel question)
+        public HttpResponseMessage Post(UserQuestionDomainModel question)
         {
             if (question == null)
             {

@@ -46,7 +46,7 @@ namespace SPA_kunde_ng2.Controllers
             {
             Category var = (Category)Enum.Parse(typeof(Category), id);
             log.Debug("Get in FAQ" + var);
-            List<FaqViewModel> allFaq = db.getCategoryContent(var);
+            List<FaqDomainModel> allFaq = db.getCategoryContent(var);
 
 
                 var Json = new JavaScriptSerializer();

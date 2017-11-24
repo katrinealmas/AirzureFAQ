@@ -6,7 +6,7 @@ using System.Web;
 
 namespace SPA_kunde_ng2.Models
 {
-    public class FaqViewModel
+    public class FaqDomainModel
     {
         [Required]
         [RegularExpression("^[a-zæøåA-ZÆØÅ. \\-]{2,30}$")]
