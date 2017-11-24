@@ -1,4 +1,4 @@
-﻿<div class="container" style="background-color: #f9f9f9;">
+﻿<div #top class="container" style="background-color: #f9f9f9;">
     <h2>Spørsmål</h2>
     <h4>Denne siden er til for å informere våre kunder om de mest vanlige spørsmålene. Bruk knappene under eller scroll nedover siden</h4>
     <div class="row button-wrapper">
@@ -23,10 +23,10 @@
             <h2>Søk i databasen</h2>
                         <div class="row">
                             <div class="col-md-7">
-                                <h4>Skriv inn dine nøkkelord og søk blant alle registrerte spørsmål</h4>
+                                <h4>Skriv inn dine nøkkelord og søk blant alle registrerte svar i databasen</h4>
                             </div>
                             <div class="col-md-5">
-                                <input type="text" [(ngModel)]="searchText" class="form-control" (click)="loading=true" placeholder="Søk etter spørsmål" />
+                                <input type="text" [(ngModel)]="searchText" class="form-control" (click)="loading=true" placeholder="Søk etter svar" />
                             </div>
                         </div>
             <div *ngIf="loading">
@@ -64,6 +64,7 @@
     <register-question></register-question>
 </div>
 
+<button type="button" class="btn faq-button pull-right" (click)="scroll(top)"><i class="fa fa-chevron-up"></i></button>
 
 
 

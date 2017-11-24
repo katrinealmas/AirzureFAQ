@@ -24,16 +24,17 @@ export class CustomerService {
     constructor(private _http: Http) { }
 
     ngOnInit() {
-        this.getAllCustomerCuestions()
+        this.getAllCustomerQuestions();
     }
 
     sort(property: any) {
-        this.descend = !this.descend; //change the direction    
+        this.descend = !this.descend; 
         this.column = property;
         this.direction = this.descend ? 1 : -1;
     };
 
-    getAllCustomerCuestions() {
+
+    getAllCustomerQuestions() {
         this._http.get("api/customer")
             .map(returData => {
                 let JsonData = returData.json();
@@ -54,7 +55,8 @@ export class CustomerService {
             },
             error => alert(error),
             () => console.log("ferdig get-api/customer")
-            );
+        );
+
     };  
 
 

@@ -5,12 +5,12 @@
     background-color: #d9edf7;
 }
 
-    .faq-button:hover {
-        background-color: #cce0ea;
-    }
+ .faq-button:hover {
+    background-color: #cce0ea;
+}
 
 .faq-nav {
-    background-color: #444444;
+    background-color: #333333;
     border:none;
 }
 
@@ -35,4 +35,12 @@ h1, h2, h3, h4, h5, h6 {
 
 p, div {
     font-family: 'Pontano Sans', sans-serif;
+}
+
+.footer {
+    position: relative;
+    height: 30px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }

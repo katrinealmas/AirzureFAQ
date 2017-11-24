@@ -20,15 +20,15 @@ var CustomerService = (function () {
         this.column = 'Name';
     }
     CustomerService.prototype.ngOnInit = function () {
-        this.getAllCustomerCuestions();
+        this.getAllCustomerQuestions();
     };
     CustomerService.prototype.sort = function (property) {
-        this.descend = !this.descend; //change the direction    
+        this.descend = !this.descend;
         this.column = property;
         this.direction = this.descend ? 1 : -1;
     };
     ;
-    CustomerService.prototype.getAllCustomerCuestions = function () {
+    CustomerService.prototype.getAllCustomerQuestions = function () {
         var _this = this;
         this._http.get("api/customer")
             .map(function (returData) {

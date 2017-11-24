@@ -87,7 +87,8 @@ namespace SPA_kunde_ng2
                     Name = question.Name,
                     Date = DateTime.Now,
                     Email = question.Email,
-                    Question = question.Question
+                    Question = question.Question,
+                    Answer = "Ubesvart"
                  });
                     db.SaveChanges();
                     log.Debug("AddUserQuestionDb");

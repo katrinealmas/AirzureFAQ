@@ -11,12 +11,12 @@ import { Headers } from "@angular/http";
 })
 export class RegisterComponent {
   
-    skjema: FormGroup;
+    form: FormGroup;
     registered: boolean;
 
 
     constructor(private _http: Http, private fb: FormBuilder) {
-        this.skjema = fb.group({
+        this.form = fb.group({
             name: [null, Validators.compose([Validators.required, Validators.pattern("[a-zA-ZøæåØÆÅ\\-. ]{2,30}")])],
             email: [null, Validators.compose([Validators.required, <any>Validators.email])],
             question: [null, Validators.compose([Validators.required, Validators.pattern("[0-9a-zA-ZøæåØÆÅ\\-.\\? ]{2,300}")])],
@@ -26,9 +26,9 @@ export class RegisterComponent {
     registerCustomerQuestion() {
         var customerQuestion = new Customer();
 
-        customerQuestion.name = this.skjema.value.name;
-        customerQuestion.email = this.skjema.value.email;
-        customerQuestion.question = this.skjema.value.question;
+        customerQuestion.name = this.form.value.name;
+        customerQuestion.email = this.form.value.email;
+        customerQuestion.question = this.form.value.question;
 
         var body: string = JSON.stringify(customerQuestion);
         var headers = new Headers({ "Content-Type": "application/json" });
@@ -41,6 +41,7 @@ export class RegisterComponent {
             },
             error => alert(error),
             () => console.log("ferdig post-api/customer")
-            );
+        );
+        this.form.reset()
     };
 }

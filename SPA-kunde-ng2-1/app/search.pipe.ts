@@ -7,7 +7,7 @@ export class SearchPipe implements PipeTransform {
          if(searchText == null) return questions;
 
          return questions.filter(function (question: any){
-          return question.Question.toLowerCase().indexOf(searchText) > -1;
+          return question.Answer.toLowerCase().indexOf(searchText) > -1;
         })
       }
     }

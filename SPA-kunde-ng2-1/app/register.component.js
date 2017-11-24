@@ -19,7 +19,7 @@ var RegisterComponent = (function () {
     function RegisterComponent(_http, fb) {
         this._http = _http;
         this.fb = fb;
-        this.skjema = fb.group({
+        this.form = fb.group({
             name: [null, forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern("[a-zA-ZøæåØÆÅ\\-. ]{2,30}")])],
             email: [null, forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.email])],
             question: [null, forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern("[0-9a-zA-ZøæåØÆÅ\\-.\\? ]{2,300}")])],
@@ -28,9 +28,9 @@ var RegisterComponent = (function () {
     RegisterComponent.prototype.registerCustomerQuestion = function () {
         var _this = this;
         var customerQuestion = new customer_1.Customer();
-        customerQuestion.name = this.skjema.value.name;
-        customerQuestion.email = this.skjema.value.email;
-        customerQuestion.question = this.skjema.value.question;
+        customerQuestion.name = this.form.value.name;
+        customerQuestion.email = this.form.value.email;
+        customerQuestion.question = this.form.value.question;
         var body = JSON.stringify(customerQuestion);
         var headers = new http_2.Headers({ "Content-Type": "application/json" });
         this._http.post("api/customer", body, { headers: headers })
@@ -38,6 +38,7 @@ var RegisterComponent = (function () {
             .subscribe(function (retur) {
             _this.registered = true;
         }, function (error) { return alert(error); }, function () { return console.log("ferdig post-api/customer"); });
+        this.form.reset();
     };
     ;
     return RegisterComponent;
