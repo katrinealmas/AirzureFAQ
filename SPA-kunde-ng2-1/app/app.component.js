@@ -15,7 +15,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'min-app',
-        template: "\n<div class=\"container\">\n<div class=\"row\">\n<nav class=\"navbar navbar-inverse faq-nav\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n<a class=\"navbar-brand\">\n                    <img src=\"Images/airline_logo.png\" width=\"110\" alt=\"Airzure logo\" />\n                </a>\n    </div>\n    <ul class=\"nav navbar-nav\">\n                <li><a class=\"faq-link active\" routerLink=\"/faq\" routerLinkActive=\"active\">FAQ</a></li>\n                <li><a class=\"faq-link active\" routerLink=\"/customerservice\" routerLinkActive=\"active\">Kundeservice</a></li>\n    </ul>\n  </div>\n</nav>\n</div>\n</div>\n<router-outlet></router-outlet>\n\n"
+        template: "<router-outlet></router-outlet>"
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
