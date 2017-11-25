@@ -93,6 +93,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.component.html" />
     <Content Include="app\customerservice.component.html" />
     <Content Include="app\register.component.html" />
     <Content Include="app\showFaq.component.html" />
@@ -128,6 +129,7 @@
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
+    <None Include="Properties\PublishProfiles\SPA-kunde-ng2-120171124090721 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
