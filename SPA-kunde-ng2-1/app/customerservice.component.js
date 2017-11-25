@@ -12,9 +12,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
+var scroll_service_1 = require("./scroll.service");
 var CustomerService = (function () {
-    function CustomerService(_http) {
+    function CustomerService(_http, _scroll) {
         this._http = _http;
+        this._scroll = _scroll;
         this.laster = false;
         this.descend = false;
         this.column = 'Name';
@@ -60,7 +62,7 @@ CustomerService = __decorate([
         selector: "min-app",
         templateUrl: "./app/customerservice.component.html",
     }),
-    __metadata("design:paramtypes", [http_1.Http])
+    __metadata("design:paramtypes", [http_1.Http, scroll_service_1.ScrollService])
 ], CustomerService);
 exports.CustomerService = CustomerService;
 //# sourceMappingURL=customerservice.component.js.map

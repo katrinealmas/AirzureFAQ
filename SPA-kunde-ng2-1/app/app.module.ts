@@ -11,6 +11,7 @@ import { OrderByPipe } from './orderby.pipe';
 import { SearchPipe } from './search.pipe';
 import { RegisterComponent } from './register.component';
 import { ShowFaqComponent } from './showFaq.component';
+import { ScrollService } from './scroll.service';
 
 
 const appRoutes: Routes = [
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
         RouterModule.forRoot(appRoutes, { useHash: true })
         , BrowserModule, ReactiveFormsModule, HttpModule, JsonpModule, FormsModule],
     declarations: [FaqComponent, CustomerService, AppComponent, OrderByPipe, SearchPipe, RegisterComponent, ShowFaqComponent],
+    providers: [ScrollService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

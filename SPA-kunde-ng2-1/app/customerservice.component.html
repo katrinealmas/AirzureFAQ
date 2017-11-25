@@ -10,55 +10,57 @@
                     <div class="row">
                         <div class="col-md-7">
                             <h4>Alle henvendelser</h4>
-                        </div>
-                        <div class="col-md-5">
+                         </div>
+                         <div class="col-md-5">
                             <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Søk etter svar" />
                         </div>
                     </div>
                 </div>
 
-                <table class="table table-striped">
-                    <tr>
-                        <th class="pointer" (click)="sort('Id')">
-                            Id
-                            <i class="fa" [ngClass]="{'fa-sort': column != 'Id', 'fa-sort-asc': (column == 'Id' && descend), 'fa-sort-desc': (column == 'Id' && !descend) }" aria-hidden="true"> </i>
-                        </th>
-                        <th class="pointer" (click)="sort('Date')">
-                            Date
-                            <i class="fa" [ngClass]="{'fa-sort': column != 'Date', 'fa-sort-asc': (column == 'Date' && descend), 'fa-sort-desc': (column == 'Date' && !descend) }" aria-hidden="true"> </i>
-                        </th>
-                        <th class="pointer" (click)="sort('Name')">
-                            Tittel
-                            <i class="fa" [ngClass]="{'fa-sort': column != 'Name', 'fa-sort-asc': (column == 'Name' && descend), 'fa-sort-desc': (column == 'Name' && !descend) }" aria-hidden="true"> </i>
-                        </th>
-                        <th class="pointer" (click)="sort('Email')">
-                            Email
-                            <i class="fa" [ngClass]="{'fa-sort': column != 'Email', 'fa-sort-asc': (column == 'Email' && descend), 'fa-sort-desc': (column == 'Email' && !descend) }" aria-hidden="true"> </i>
-                        </th>
-                        <th class="pointer" (click)="sort('Question')">
-                            Question
-                            <i class="fa" [ngClass]="{'fa-sort': column != 'Question', 'fa-sort-asc': (column == 'Question' && descend), 'fa-sort-desc': (column == 'Question' && !descend) }" aria-hidden="true"> </i>
-                        </th>
-                        <th class="pointer" (click)="sort('Answer')">
-                            Answer
-                            <i class="fa" [ngClass]="{'fa-sort': column != 'Answer', 'fa-sort-asc': (column == 'Answer' && descend), 'fa-sort-desc': (column == 'Answer' && !descend) }" aria-hidden="true"> </i>
-                        </th>
-                    </tr>
-                    <tr *ngFor="let quest of allQuestions | question: searchText  |  orderBy: {property: column, direction: direction}">
-                        <td><p>{{quest.Id}}</p></td>
-                        <td><p>{{quest.Date}}</p></td>
-                        <td><p>{{quest.Name}}</p></td>
-                        <td><p>{{quest.Email}}</p></td>
-                        <td><p>{{quest.Question}}</p></td>
-                        <td>
-                            <p *ngIf='quest.Answer === "Ubesvart"; else display' style="color:red;">{{quest.Answer}}</p>
-                            <ng-template #display><p>{{quest.Answer}}</p></ng-template>
-                        </td>
-                    </tr>
-                </table>`
+                <table class="table table-striped table">
+                        <tr>
+                            <th class="pointer col-md-1" (click)="sort('Id')">
+                                Id
+                                <i class="fa" [ngClass]="{'fa-sort': column != 'Id', 'fa-sort-asc': (column == 'Id' && descend), 'fa-sort-desc': (column == 'Id' && !descend) }" aria-hidden="true"></i>
+                                </th>
+                            <th class="pointer col-md-1" (click)="sort('Date')">
+                                Date
+                                <i class="fa" [ngClass]="{'fa-sort': column != 'Date', 'fa-sort-asc': (column == 'Date' && descend), 'fa-sort-desc': (column == 'Date' && !descend) }" aria-hidden="true"> </i>
+                            </th>
+                            <th class="pointer col-md-2" (click)="sort('Name')">
+                                Tittel
+                                <i class="fa" [ngClass]="{'fa-sort': column != 'Name', 'fa-sort-asc': (column == 'Name' && descend), 'fa-sort-desc': (column == 'Name' && !descend) }" aria-hidden="true"> </i>
+                            </th>
+                            <th class="pointer col-md-1" (click)="sort('Email')">
+                                Email
+                                <i class="fa" [ngClass]="{'fa-sort': column != 'Email', 'fa-sort-asc': (column == 'Email' && descend), 'fa-sort-desc': (column == 'Email' && !descend) }" aria-hidden="true"> </i>
+                            </th>
+                            <th class="pointer col-md-3" (click)="sort('Question')">
+                                Question
+                                <i class="fa" [ngClass]="{'fa-sort': column != 'Question', 'fa-sort-asc': (column == 'Question' && descend), 'fa-sort-desc': (column == 'Question' && !descend) }" aria-hidden="true"> </i>
+                            </th>
+                            <th class="pointer col-md-4" (click)="sort('Answer')">
+                                Answer
+                                <i class="fa" [ngClass]="{'fa-sort': column != 'Answer', 'fa-sort-asc': (column == 'Answer' && descend), 'fa-sort-desc': (column == 'Answer' && !descend) }" aria-hidden="true"> </i>
+                            </th>
+                        </tr>
+                        <tr *ngFor="let quest of allQuestions | question: searchText  |  orderBy: {property: column, direction: direction}">
+                            <td><p>{{quest.Id}}</p></td>
+                            <td><p>{{quest.Date}}</p></td>
+                            <td><p>{{quest.Name}}</p></td>
+                            <td><p>{{quest.Email}}</p></td>
+                            <td><p>{{quest.Question}}</p></td>
+                            <td>
+                                <p *ngIf='quest.Answer === "Ubesvart"; else display' style="color:red;">{{quest.Answer}}</p>
+                                <ng-template #display><p>{{quest.Answer}}</p></ng-template>
+                            </td>
+                        </tr>
+</table>`
+                
             </div>
         </div>
     </div>
 </div>
+<button type="button" class="btn faq-button pull-right" (click)="_scroll.scrollToTop()"><i class="fa fa-chevron-up"></i></button>
 
 

@@ -3,13 +3,13 @@
     <h4>Denne siden er til for å informere våre kunder som ønsker mer informasjon. Bruk knappene under eller scroll nedover siden for å finne svar på dine spørsmål.</h4>
     <div class="row button-wrapper">
         <div class="col-md-4">
-            <button type="button" style="height:75px;width:99%" class="btn faq-button" (click)="scroll(faq)"><h3>Ofte stilte spørsmål</h3></button>
+            <button type="button" style="height:75px;width:99%" class="btn faq-button" (click)="scroll.scroll(faq)"><h3>Ofte stilte spørsmål</h3></button>
         </div>
         <div class="col-md-4">
-            <button type="button" style="height:75px;width:99%" class="btn faq-button" (click)="scroll(database)"><h3>Søk i databasen</h3></button>
+            <button type="button" style="height:75px;width:99%" class="btn faq-button" (click)="_scroll.scroll(database)"><h3>Søk i databasen</h3></button>
         </div>
         <div class="col-md-4">
-            <button type="button" style="height:75px;width:99%" class="btn faq-button" (click)="scroll(contact)"><h3>Kontakt kundeservice</h3></button>
+            <button type="button" style="height:75px;width:99%" class="btn faq-button" (click)="_scroll.scroll(contact)"><h3>Kontakt kundeservice</h3></button>
         </div>
     </div>
 </div>
@@ -62,7 +62,7 @@
     </div>
 <div #contact>
     <register-question></register-question>
-    <button type="button" class="btn faq-button pull-right" (click)="scroll(top)"><i class="fa fa-chevron-up"></i></button>
+    <button type="button" class="btn faq-button pull-right" (click)="_scroll.scrollToTop()"><i class="fa fa-chevron-up"></i></button>
 </div>
 
 

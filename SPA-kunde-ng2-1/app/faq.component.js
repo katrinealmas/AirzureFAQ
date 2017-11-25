@@ -13,10 +13,12 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var forms_1 = require("@angular/forms");
 require("rxjs/add/operator/map");
+var scroll_service_1 = require("./scroll.service");
 var FaqComponent = (function () {
-    function FaqComponent(_http, fb) {
+    function FaqComponent(_http, fb, _scroll) {
         this._http = _http;
         this.fb = fb;
+        this._scroll = _scroll;
         this.search = fb.group({
             content: [null, forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern("[0-9a-zA-ZøæåØÆÅ\\-.\\? ]{2,300}")])],
         });
@@ -24,10 +26,6 @@ var FaqComponent = (function () {
     FaqComponent.prototype.ngOnInit = function () {
         this.loading = false;
         this.getAllFrequentlyAskedQuestions();
-    };
-    FaqComponent.prototype.scroll = function (el) {
-        console.log(el);
-        el.scrollIntoView(true);
     };
     FaqComponent.prototype.getAllFrequentlyAskedQuestions = function () {
         var _this = this;
@@ -54,9 +52,9 @@ var FaqComponent = (function () {
 FaqComponent = __decorate([
     core_1.Component({
         selector: "min-app",
-        templateUrl: "./app/faq.html"
+        templateUrl: "./app/faq.component.html"
     }),
-    __metadata("design:paramtypes", [http_1.Http, forms_1.FormBuilder])
+    __metadata("design:paramtypes", [http_1.Http, forms_1.FormBuilder, scroll_service_1.ScrollService])
 ], FaqComponent);
 exports.FaqComponent = FaqComponent;
 //# sourceMappingURL=faq.component.js.map

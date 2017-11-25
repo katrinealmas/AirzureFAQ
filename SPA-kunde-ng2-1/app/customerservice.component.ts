@@ -6,6 +6,7 @@ import { Customer } from "./customer";
 import { Headers } from "@angular/http";
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
+import { ScrollService } from "./scroll.service";
 
 @Component({
     selector: "min-app",
@@ -21,7 +22,7 @@ export class CustomerService {
     column: string = 'Name';
     direction: number;
 
-    constructor(private _http: Http) { }
+    constructor(private _http: Http, private _scroll: ScrollService) { }
 
     ngOnInit() {
         this.getAllCustomerQuestions();
@@ -32,7 +33,6 @@ export class CustomerService {
         this.column = property;
         this.direction = this.descend ? 1 : -1;
     };
-
 
     getAllCustomerQuestions() {
         this._http.get("api/customer")

@@ -93,11 +93,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="airline_logo.png" />
+    <Content Include="airzure-favicon.png" />
     <Content Include="app\app.component.html" />
     <Content Include="app\customerservice.component.html" />
     <Content Include="app\register.component.html" />
     <Content Include="app\showFaq.component.html" />
-    <Content Include="app\faq.html" />
+    <Content Include="app\faq.component.html" />
     <Content Include="App_Data\CustomerserviceDatabase.mdf" />
     <Content Include="App_Data\CustomerserviceDatabase_log.ldf">
       <DependentUpon>CustomerserviceDatabase.mdf</DependentUpon>
@@ -129,6 +131,7 @@
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
+    <None Include="Properties\PublishProfiles\airzure-faq - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\SPA-kunde-ng2-120171124090721 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -146,6 +149,7 @@
     <TypeScriptCompile Include="app\question.ts" />
     <TypeScriptCompile Include="app\customerservice.component.ts" />
     <TypeScriptCompile Include="app\register.component.ts" />
+    <TypeScriptCompile Include="app\scroll.service.ts" />
     <TypeScriptCompile Include="app\search.pipe.ts" />
     <TypeScriptCompile Include="app\showFaq.component.ts" />
     <TypeScriptCompile Include="app\faq.component.ts" />

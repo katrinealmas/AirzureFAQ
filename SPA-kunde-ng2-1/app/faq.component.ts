@@ -5,18 +5,19 @@ import "rxjs/add/operator/map";
 import { Question } from "./question";
 import { Customer } from "./customer";
 import { Headers } from "@angular/http";
+import { ScrollService } from "./scroll.service";
 
 
 @Component({
     selector: "min-app",
-    templateUrl: "./app/faq.html"
+    templateUrl: "./app/faq.component.html"
 })
 export class FaqComponent {
     allFaq: Array<Question>; // List of all faq in db
     search: FormGroup;
     loading: boolean;
  
-    constructor(private _http: Http, private fb: FormBuilder) {
+    constructor(private _http: Http, private fb: FormBuilder, private _scroll: ScrollService) {
         this.search = fb.group({
             content: [null, Validators.compose([Validators.required, Validators.pattern("[0-9a-zA-ZøæåØÆÅ\\-.\\? ]{2,300}")])],
         });
@@ -25,11 +26,6 @@ export class FaqComponent {
     ngOnInit() {
         this.loading = false;
         this.getAllFrequentlyAskedQuestions();
-    }
-
-    scroll(el: any) {
-        console.log(el)
-        el.scrollIntoView(true)
     }
 
     getAllFrequentlyAskedQuestions() {

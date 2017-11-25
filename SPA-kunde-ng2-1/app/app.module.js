@@ -19,6 +19,7 @@ var orderby_pipe_1 = require("./orderby.pipe");
 var search_pipe_1 = require("./search.pipe");
 var register_component_1 = require("./register.component");
 var showFaq_component_1 = require("./showFaq.component");
+var scroll_service_1 = require("./scroll.service");
 var appRoutes = [
     { path: 'faq', component: faq_component_1.FaqComponent },
     { path: 'customerservice', component: customerservice_component_1.CustomerService },
@@ -36,6 +37,7 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule, forms_2.ReactiveFormsModule, http_1.HttpModule, http_1.JsonpModule, forms_1.FormsModule
         ],
         declarations: [faq_component_1.FaqComponent, customerservice_component_1.CustomerService, app_component_1.AppComponent, orderby_pipe_1.OrderByPipe, search_pipe_1.SearchPipe, register_component_1.RegisterComponent, showFaq_component_1.ShowFaqComponent],
+        providers: [scroll_service_1.ScrollService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
